@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.landing {
+  background-image: url("./imgs/1.jpg");
+  /* Add other properties as needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 :root {
   line-height: 1.5;

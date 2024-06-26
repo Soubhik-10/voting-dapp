@@ -53,6 +53,10 @@ contract VotingSystem {
         isVoter[_voter] = true;
     }
 
+    function resetVote() public onlyOwner {
+        delete candidates;
+    }
+
     function startVote(uint256 time) public onlyOwner {
         endTime = time + block.timestamp;
         noOfVoters = 0;

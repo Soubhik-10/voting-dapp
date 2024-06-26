@@ -1,7 +1,7 @@
 import { createThirdwebClient, getContract, resolveMethod } from "thirdweb";
 import { defineChain } from "thirdweb/chains";
 import { ThirdwebProvider } from "thirdweb/react";
-
+import Landing from "./components/Landing";
 // create the client with your clientId, or secretKey if in a server environment
 export const client = createThirdwebClient({
   clientId: "YOUR_CLIENT_ID",
@@ -17,7 +17,10 @@ export const contract = getContract({
 function App() {
   return (
     <ThirdwebProvider>
-      <div>Yoooo</div>
+      <div>
+        <Landing />
+      </div>
     </ThirdwebProvider>
   );
 }
+export default App;
