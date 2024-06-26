@@ -3,15 +3,17 @@ import { ConnectButton } from "thirdweb/react";
 import { useVotingContext } from "../context/context"; // Adjust the import path as needed
 import { useState, useEffect } from "react";
 import { useActiveWalletConnectionStatus } from "thirdweb/react";
+import Features from "./Features";
 
 const Landing: React.FC = () => {
   const { contract, wallets, client } = useVotingContext();
   const [isConnected, setIsConnected] = useState(false);
-
+  const commonstyles =
+    "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
   return (
     <div className="landing bg-cover bg-center h-screen flex flex-col items-center justify-center ">
       <div className=" text-white">
-        <div className="bg-black bg-opacity-50 p-8 rounded-md text-center">
+        <div className="blue-glassmorphism p-8 rounded-md text-center">
           <h1 className="font-bold text-6xl p-4">
             The Future of Voting is Here!
           </h1>
@@ -24,6 +26,18 @@ const Landing: React.FC = () => {
             the future of democratic participation, where every vote counts and
             the process is fair for everyone.
           </p>
+          <div className="grid sm:grid-cols-3 grid-cols-2 sm:w-full md:w-auto m-1 p-2 blue-glassmorphism">
+            <div className={`rounded-tl-2xl ${commonstyles}`}>Reliability</div>
+            <div className={`rounded-tr-2xl md:rounded-none ${commonstyles}`}>
+              Security
+            </div>
+            <div className={`sm:rounded-tr-2xl ${commonstyles}`}>Ethereum</div>
+            <div className={`sm:rounded-bl-2xl ${commonstyles}`}>Web-3.0</div>
+            <div className={`rounded-bl-2xl md:rounded-none ${commonstyles}`}>
+              Transparent
+            </div>
+            <div className={` rounded-br-2xl ${commonstyles}`}>Blockchain</div>
+          </div>
           <ConnectButton
             client={client}
             wallets={wallets}
@@ -32,11 +46,13 @@ const Landing: React.FC = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="flex border-white border-2 p-4">
         {useActiveWalletConnectionStatus() == "connected" ? (
-          <p>djksn</p>
+          <Features />
         ) : (
-          <p>Connect wallet to get started</p>
+          <p className="font-bold capitalize text-yellow-200">
+            Connect wallet to get started
+          </p>
         )}
       </div>
     </div>
