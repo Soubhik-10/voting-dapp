@@ -33,7 +33,7 @@ export const VotingContextProvider = ({
   const contract = getContract({
     client,
     chain: defineChain(11155111),
-    address: "0x237D79C076933260CDaC6835c10D879C312A6BBE",
+    address: import.meta.env.VITE_CONTRACT_ADDRESS as string,
   });
 
   // const connect =;

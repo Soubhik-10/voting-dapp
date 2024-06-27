@@ -2,24 +2,26 @@ import { createThirdwebClient, getContract, resolveMethod } from "thirdweb";
 import { defineChain } from "thirdweb/chains";
 import { ThirdwebProvider } from "thirdweb/react";
 import Landing from "./components/Landing";
+import Features from "./components/Features";
+import AddUser from "./components/AddUser";
 // create the client with your clientId, or secretKey if in a server environment
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateVote from "./components/CreateVote";
 export const client = createThirdwebClient({
   clientId: "YOUR_CLIENT_ID",
-});
-
-// connect to your contract
-export const contract = getContract({
-  client,
-  chain: defineChain(11155111),
-  address: "0x69915C04EA5ad1ED199fd73C7f06C8ca5690a6Da",
 });
 
 function App() {
   return (
     <ThirdwebProvider>
-      <div>
-        <Landing />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/createvote" element={<CreateVote />} />
+          <Route path="/adduser" element={<AddUser />} />
+        </Routes>
+      </Router>
     </ThirdwebProvider>
   );
 }

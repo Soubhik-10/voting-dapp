@@ -35,16 +35,81 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
-
+.green-glassmorphism {
+  background: rgba(0, 255, 171, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.green-glassmorphism1 {
+  background-color: #1e3a8a; /* Dark blue background */
+  background-image: radial-gradient(
+      at 83% 67%,
+      rgb(135, 206, 235) 0%,
+      /* Light sky blue */ transparent 58%
+    ),
+    radial-gradient(
+      at 67% 20%,
+      rgb(70, 130, 180) 0%,
+      /* Steel blue */ transparent 59%
+    ),
+    radial-gradient(
+      at 88% 35%,
+      rgb(100, 149, 237) 0%,
+      /* Cornflower blue */ transparent 50%
+    ),
+    radial-gradient(
+      at 31% 91%,
+      rgb(123, 104, 238) 0%,
+      /* Medium slate blue */ transparent 52%
+    ),
+    radial-gradient(
+      at 27% 71%,
+      rgb(72, 61, 139) 0%,
+      /* Dark slate blue */ transparent 49%
+    ),
+    radial-gradient(
+      at 74% 89%,
+      rgb(30, 144, 255) 0%,
+      /* Dodger blue */ transparent 51%
+    ),
+    radial-gradient(
+      at 53% 75%,
+      rgb(65, 105, 225) 0%,
+      /* Royal blue */ transparent 45%
+    );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
 /* white glassmorphism */
 .white-glassmorphism {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.newGrad {
+  background-image: linear-gradient(
+    40deg,
+    hsl(2deg 89% 69%) 0%,
+    hsl(26deg 97% 66%) 19%,
+    hsl(44deg 100% 61%) 27%,
+    hsl(58deg 90% 54%) 34%,
+    hsl(81deg 89% 65%) 41%,
+    hsl(125deg 96% 71%) 47%,
+    hsl(156deg 93% 56%) 53%,
+    hsl(171deg 79% 56%) 59%,
+    hsl(188deg 92% 54%) 66%,
+    hsl(220deg 76% 76%) 73%,
+    hsl(294deg 59% 68%) 81%,
+    hsl(312deg 100% 50%) 100%
+  );
+}
 .eth-card {
   background-color: #a099ff;
   background-image: radial-gradient(
@@ -59,6 +124,44 @@
     radial-gradient(at 74% 89%, hsla(30, 98%, 65%, 1) 0, transparent 51%),
     radial-gradient(at 53% 75%, hsla(174, 94%, 68%, 1) 0, transparent 45%);
 }
+.eth-card {
+  background-color: #1e3a8a; /* Dark blue background */
+  background-image: radial-gradient(
+      at 83% 67%,
+      rgb(135, 206, 235) 0%,
+      /* Light sky blue */ transparent 58%
+    ),
+    radial-gradient(
+      at 67% 20%,
+      rgb(70, 130, 180) 0%,
+      /* Steel blue */ transparent 59%
+    ),
+    radial-gradient(
+      at 88% 35%,
+      rgb(100, 149, 237) 0%,
+      /* Cornflower blue */ transparent 50%
+    ),
+    radial-gradient(
+      at 31% 91%,
+      rgb(123, 104, 238) 0%,
+      /* Medium slate blue */ transparent 52%
+    ),
+    radial-gradient(
+      at 27% 71%,
+      rgb(72, 61, 139) 0%,
+      /* Dark slate blue */ transparent 49%
+    ),
+    radial-gradient(
+      at 74% 89%,
+      rgb(30, 144, 255) 0%,
+      /* Dodger blue */ transparent 51%
+    ),
+    radial-gradient(
+      at 53% 75%,
+      rgb(65, 105, 225) 0%,
+      /* Royal blue */ transparent 45%
+    );
+}
 
 .text-gradient {
   background-color: #fff;
@@ -70,4 +173,21 @@
     radial-gradient(at 100% 60%, rgb(0, 0, 0) 0, transparent 50%);
   /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
+}
+.gradient-bg-welcome {
+  background-color: #0f0e13;
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(253, 16%, 7%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+}
+.bg-welcome {
+  background-image: url("./imgs/1.jpg");
+  /* Add other properties as needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
