@@ -53,6 +53,7 @@ const AddUser: React.FC = () => {
         setVoterSuccess(true);
       }
       setTimeout(() => setVoterSuccess(false), 3000); // Hide message after 3 seconds
+      setVoterAddress("");
     }
   };
 
@@ -76,7 +77,9 @@ const AddUser: React.FC = () => {
       if (transactionHash) {
         setInspectorSuccess(true);
       }
-      setTimeout(() => setInspectorSuccess(false), 3000); // Hide message after 3 seconds
+      setTimeout(() => setInspectorSuccess(false), 3000);
+      // Hide message after 3 seconds
+      setInspectorAddress("");
     }
   };
 

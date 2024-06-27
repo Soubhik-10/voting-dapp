@@ -22,7 +22,8 @@ contract VotingSystem {
         uint256 votes;
     }
     Candidate[] candidates;
-
+    //Vote[] Votes;
+    address[] voters;
     mapping(address => bool) public isVoter;
     mapping(address => bool) public hasVoted;
     mapping(address => bool) public isInspector;
@@ -51,10 +52,14 @@ contract VotingSystem {
 
     function addVoters(address _voter) public onlyInspector {
         isVoter[_voter] = true;
+        //voters.push(_voter);
     }
 
     function resetVote() public onlyOwner {
         delete candidates;
+        for (uint i = 0; i < voters.length; i++) {
+            //hasVoted[voters[i]] = false;
+        }
     }
 
     function startVote(uint256 time) public onlyOwner {
@@ -68,7 +73,7 @@ contract VotingSystem {
         if (block.timestamp > endTime) revert VotingSystem_VoteEnded();
         if (endTime == 0) revert VotingSystem_VoteEnded();
         if (hasVoted[msg.sender]) revert VotingSystem_AlreadyVoted();
-
+        voters.push(msg.sender);
         noOfVotes[toBeVoted] += 1;
         noOfVoters++;
         hasVoted[msg.sender] = true;

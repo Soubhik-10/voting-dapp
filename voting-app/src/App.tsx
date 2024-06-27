@@ -4,6 +4,8 @@ import { ThirdwebProvider } from "thirdweb/react";
 import Landing from "./components/Landing";
 import Features from "./components/Features";
 import AddUser from "./components/AddUser";
+import Vote from "./components/Vote";
+import Result from "./components/Result";
 // create the client with your clientId, or secretKey if in a server environment
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateVote from "./components/CreateVote";
@@ -20,6 +22,8 @@ function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/createvote" element={<CreateVote />} />
           <Route path="/adduser" element={<AddUser />} />
+          <Route path="/vote" element={<Vote />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
       </Router>
     </ThirdwebProvider>

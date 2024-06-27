@@ -46,7 +46,6 @@ const Features = () => {
         setIsVoter(data);
       }
     }, [data]);
-    console.log(data);
   }
   if (wallet) {
     const { data, isLoading } = useReadContract({
@@ -58,6 +57,7 @@ const Features = () => {
     useEffect(() => {
       if (data !== undefined) {
         setIsInspector(data);
+        console.log(data);
       }
       if (wallet == OWNER) {
         setIsOwner(true);
@@ -130,12 +130,16 @@ const Features = () => {
 
         {isVoter ? (
           <div className="flex flex-col gap-2">
-            <button className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
-              Vote Now
-            </button>
-            <button className="w-full bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600">
-              View Results
-            </button>
+            <Link to="/vote" className="w-full flex">
+              <button className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+                Vote Now
+              </button>
+            </Link>
+            <Link to="/result" className="w-full flex">
+              <button className="w-full bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600">
+                View Results
+              </button>
+            </Link>
           </div>
         ) : (
           <div className="text-center">

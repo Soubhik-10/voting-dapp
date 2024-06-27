@@ -1,11 +1,15 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { useState, useEffect } from "react";
 
 interface CountdownTimerProps {
   time: number;
 }
 
-const CountdownTimer: React.FC<CountdownTimerProps> = ({ time }) => {
+const Counter: React.FC<CountdownTimerProps> = ({ time }) => {
   const [secondsRemaining, setSecondsRemaining] = useState(time);
+
+  useEffect(() => {
+    setSecondsRemaining(time);
+  }, [time]);
 
   useEffect(() => {
     if (secondsRemaining <= 0) return;
@@ -25,10 +29,12 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ time }) => {
   };
 
   return (
-    <div className="countdown-timer">
-      <p className="text-2xl font-mono">{formatTime(secondsRemaining)}</p>
+    <div className="countdown-timer p-2 bg-black w-auto">
+      <p className="text-3xl font-mono text-center text-white">
+        {formatTime(secondsRemaining)}
+      </p>
     </div>
   );
 };
 
-export default CountdownTimer;
+export default Counter;
